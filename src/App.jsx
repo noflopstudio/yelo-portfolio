@@ -528,20 +528,20 @@ function getServices(fr) {
         "Gestion des stocks et inventaires",
         "Gestion des ventes et facturation",
         "Suivi des paiements et de la caisse",
-        "Gestion des entrées et sorties de marchandises",
+        "Gestion des mouvements de stock",
         "Tableaux de bord et rapports d'activité",
         "Gestion des utilisateurs et des accès",
-        "Analyse des besoins et conception personnalisée",
+        "Analyse et conception personnalisée",
         "Tests, installation et accompagnement"
       ]
     : [
         "Stock and inventory management",
         "Sales and invoicing management",
         "Payment and cash management",
-        "Goods entry and exit tracking",
+        "Stock movement management",
         "Dashboards and business reports",
         "User and access management",
-        "Requirements analysis and custom design",
+        "Analysis and custom design",
         "Testing, installation and support"
       ],
       },
@@ -556,22 +556,22 @@ function getServices(fr) {
         "Sites vitrines professionnels",
         "Sites web dynamiques et interactifs",
         "Plateformes et applications web sur mesure",
-        "Interfaces modernes et adaptées aux mobiles",
-        "Formulaires et fonctionnalités personnalisées",
+        "Interfaces modernes et mobiles",
+        "Formulaires et fonctions sur mesure",
         "Connexion aux bases de données",
-        "Intégration de solutions de paiement selon les besoins",
-        "Mise en ligne et configuration du nom de domaine",
+        "Intégration de paiements en ligne",
+        "Mise en ligne et configuration du domaine",
         "Tests et optimisation"
       ]
     : [
         "Professional business websites",
         "Dynamic and interactive websites",
         "Custom platforms and web applications",
-        "Modern and mobile-friendly interfaces",
+        "Modern, mobile-friendly interfaces",
         "Custom forms and features",
         "Database integration",
-        "Payment solution integration when required",
-        "Website deployment and domain configuration",
+        "Online payment integration",
+        "Deployment and domain setup",
         "Testing and optimization"
       ],
       },
@@ -588,7 +588,7 @@ function getServices(fr) {
         "Surveillance du bon fonctionnement",
         "Amélioration des performances",
         "Vérification de la sécurité et des accès",
-        "Sauvegarde et récupération des données selon la solution utilisée",
+        "Sauvegarde et restauration des données",
         "Assistance technique à distance",
         "Ajout et amélioration de fonctionnalités",
         "Conseils et accompagnement selon accord"
@@ -599,7 +599,7 @@ function getServices(fr) {
         "Monitoring proper operation",
         "Performance improvements",
         "Security and access checks",
-        "Data backup and recovery depending on the solution",
+        "Data backup and recovery",
         "Remote technical assistance",
         "Feature additions and improvements",
         "Guidance and support as agreed"
@@ -768,51 +768,152 @@ function ProjectsPreview() {
 }
 
 
+
 function getPrices(fr) {
   return [
+
     {
-      title: fr ? "Logiciel sur mesure" : "Custom software",
-      subtitle: fr ? "Gestion et automatisation" : "Management and automation",
-      price: "200 000",
+      title: fr ? "Site web simple" : "Simple website",
+      subtitle: fr ? "Création sans agent IA" : "Website without AI agent",
+      price: "60 000",
       details: fr
-        ? ["Stocks et inventaire", "Caisse et ventes", "Suivi de l'activité"]
-        : ["Stock and inventory", "Cash register and sales", "Business tracking"],
-      payment: fr ? "4 tranches de 50 000 FCFA" : "4 installments of 50,000 FCFA",
+        ? [
+            "Site vitrine professionnel",
+            "Présentation des services",
+            "Formulaire de contact",
+            "Adaptation aux téléphones"
+          ]
+        : [
+            "Professional showcase website",
+            "Services presentation",
+            "Contact form",
+            "Mobile-friendly design"
+          ],
+      payment: fr ? "Prix de création" : "Development price",
     },
     {
-      title: fr ? "Site web / Application web" : "Website / Web application",
-      subtitle: fr ? "Présence numérique" : "Digital presence",
+      title: fr ? "Site web avec agent IA" : "Website with AI agent",
+      subtitle: fr ? "Présence numérique intelligente" : "Intelligent digital presence",
       price: "150 000",
-      domainIncluded: true,
       details: fr
-        ? ["Site vitrine", "Site web dynamique", "Développement React / JS"]
-        : ["Showcase website", "Dynamic website", "React / JS development"],
-      payment: fr ? "Échelonnement sur demande" : "Installments on request",
+  ? [
+      "Site vitrine ou site dynamique",
+      "Agent IA intégré",
+      "Assistant IA pour visiteurs",
+      "Adaptation aux téléphones",
+      "Domaine offert pendant 1 an",
+      "Hébergement inclus"
+    ]
+  : [
+      "Showcase or dynamic website",
+      "Integrated AI agent",
+      "AI visitor assistant",
+      "Mobile-friendly design",
+      "Free domain for 1 year",
+      "Hosting included"
+    ],
+     payment: fr
+  ? "Prix de création et d'hébergement"
+  : "Development and hosting price",
+    },
+
+    {
+      title: fr ? "Logiciel de gestion simple" : "Simple management software",
+      subtitle: fr ? "Gestion et automatisation" : "Management and automation",
+      price: "150 000",
+      details: fr
+        ? [
+            "Gestion des stocks et inventaires",
+            "Gestion de la caisse et des ventes",
+            "Suivi de l'activité",
+            "Solution adaptée à l'entreprise"
+          ]
+        : [
+            "Stock and inventory management",
+            "Cash and sales management",,
+            "Business activity tracking",
+            "Solution tailored to the business"
+          ],
+      payment: fr ? "Prix de création" : "Development price",
     },
     {
-      title: fr ? "Site / App avec maintenance" : "Website / App with maintenance",
-      subtitle: fr ? "Suivi technique" : "Technical follow-up",
-      price: "200 000",
+    title: fr ? "Logiciel de gestion avec IA" : "Management software with AI",
+    subtitle: fr
+    ? "Gestion intelligente et automatisation"
+    : "Smart management and automation",
+    price: "200 000",
+     details: fr
+    ? [
+        "Gestion des stocks et inventaires",
+        "Gestion de la caisse et des ventes",
+        "Assistance intelligente par IA",
+        "Automatisation selon les besoins",
+        "Hébergement inclus"
+      ]
+    : [
+        "Stock and inventory management",
+        "Cash and sales management",,
+        "Intelligent AI assistance",
+        "Business automation",,
+        "Hosting included"
+      ],
+    payment: fr
+    ? "Prix de création et d'hébergement"
+    : "Development and hosting price",
+    },
+
+    {
+      title: fr ? "Site web + maintenance" : "Website + maintenance",
+      subtitle: fr ? "Suivi technique et assistance" : "Technical support and assistance",
+      price: "100 000",
       monthly: true,
-      domainIncluded: true,
+      total: "300 000",
+      duration: fr ? "Engagement minimum : 3 mois" : "Minimum commitment: 3 months",
       details: fr
-        ? ["Corrections", "Mises à jour", "Sécurité et suivi technique"]
-        : ["Fixes", "Updates", "Security and technical follow-up"],
-      payment: fr ? "Suivi technique continu" : "Ongoing technical follow-up",
+        ? [
+            "Corrections courantes",
+            "Mises à jour techniques",
+            "Surveillance et sécurité",
+            "Assistance technique"
+          ]
+        : [
+            "Routine fixes",
+            "Technical updates",
+            "Monitoring and security",
+            "Technical assistance"
+          ],
+      payment: fr
+        ? "Total sur 3 mois : 300 000 FCFA"
+        : "Total for 3 months: 300,000 FCFA",
     },
     {
-      title: fr ? "Logiciel sur mesure avec maintenance" : "Custom software with maintenance",
-      subtitle: fr ? "Solution et accompagnement" : "Solution and support",
-      price: "300 000",
+      title: fr ? "Logiciel + maintenance" : "Software + maintenance",
+      subtitle: fr ? "Suivi technique et accompagnement" : "Technical support and guidance",
+      price: "150 000",
       monthly: true,
+      total: "600 000",
+      duration: fr ? "Engagement minimum : 3 mois" : "Minimum commitment: 3 months",
       recommended: true,
       details: fr
-        ? ["Maintenance évolutive", "Support prioritaire", "Accompagnement technique"]
-        : ["Ongoing improvements", "Priority support", "Technical assistance"],
-      payment: fr ? "Interlocuteur unique" : "Single point of contact",
+        ? [
+            "Corrections et améliorations",
+            "Mises à jour et sécurité",
+            "Assistance prioritaire",
+            "Suivi technique continu"
+          ]
+        : [
+            "Fixes and improvements",
+            "Updates and security",
+            "Priority support",
+            "Continuous technical monitoring"
+          ],
+      payment: fr
+        ? "Total sur 3 mois : 450 000 FCFA"
+        : "Total for 3 months: 450,000 FCFA",
     },
   ];
 }
+
 
 function Pricing() {
   const { lang } = useLanguage();
@@ -864,8 +965,8 @@ function PricingCards() {
          <Icon name="globe" size={14} />
          </span>
          {fr
-         ? "Nom de domaine offert pendant 1 an"
-         : "Free domain name for 1 year"}
+         ? "Domaine offert pendant 1 an"
+         : "Free domain for 1 year"}
          </div>
          )}
 
@@ -1067,10 +1168,6 @@ function SectionTitle({ eyebrow, title, subtitle, link, linkText }) {
     </div>
   );
 }
-
-/* =========================
-   APPLICATION
-========================= */
 
 export default function App() {
   return (
