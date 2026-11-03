@@ -317,6 +317,94 @@ main {
   line-height: 1.8;
 }
 
+.hero-stats {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 4px;
+}
+
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 20px;
+  background: #f5f8ff;
+  border: 1px solid #e2eaf8;
+  border-radius: 14px;
+}
+
+.hero-stat-number {
+  color: var(--blue);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hero-stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.hero-stat-info h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-stat-info p {
+  margin: 0;
+  color: #647894;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Drapeaux sur une seule ligne */
+.hero-countries {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 7px;
+}
+
+.hero-countries span {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  background: #ffffff;
+  border: 1px solid #e2eaf8;
+  border-radius: 20px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-stats {
+    margin-top: 18px;
+  }
+
+  .hero-stat {
+    width: 100%;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .hero-stat-number {
+    font-size: 27px;
+  }
+
+  .hero-countries {
+    gap: 8px;
+  }
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

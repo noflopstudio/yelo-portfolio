@@ -278,13 +278,27 @@ function Home() {
     title: fr
       ? "Des idées qui deviennent des solutions digitales."
       : "Turning ideas into digital solutions.",
-    description: fr
-      ? "Je conçois et développe des sites web, des applications web et des logiciels de gestion adaptés aux besoins des entreprises."
-      : "I design and develop websites, web applications and management software adapted to business needs.",
+   description: fr
+  ? "Je conçois et développe des sites web, des applications web et des logiciels de gestion adaptés aux besoins des entreprises."
+  : "I design and develop websites, web applications and management software adapted to business needs.",
+
+    collaborations: {
+    number: "5",
+    title: fr ? "Entreprises accompagnées" : "Businesses supported",
+    subtitle: fr
+    ? "Collaborations réalisées en freelance"
+    : "Freelance collaborations completed",
+    },
+
+    visitors: {
+    title: fr ? "Visiteurs du portfolio" : "Portfolio visitors",
+    },
+
     projects: fr ? "Voir mes projets" : "View my projects",
     pricing: fr ? "Voir les tarifs" : "View pricing",
     why: fr ? "Pourquoi travailler avec moi ?" : "Why work with me?",
     cards: [
+      
       {
         icon: "message",
         title: fr ? "Écoute et compréhension" : "Listening and understanding",
@@ -328,6 +342,26 @@ function Home() {
             <h2>{content.title}</h2>
 
             <p className="hero-description">{content.description}</p>
+
+<div className="hero-stats">
+  <div className="hero-stat">
+    <strong className="hero-stat-number">
+      {content.collaborations.number}+
+    </strong>
+
+    <div className="hero-stat-info">
+      <h3>{content.collaborations.title}</h3>
+
+      <p>{content.collaborations.subtitle}</p>
+
+      <div className="hero-countries">
+        <span title="Côte d'Ivoire">🇨🇮 × 3</span>
+        <span title="Bénin">🇧🇯 × 1</span>
+        <span title="Sénégal">🇸🇳 × 1</span>
+      </div>
+      </div>
+      </div>
+      </div>
 
             <div className="hero-actions">
               <Link to="/projects" className="btn btn-primary">
