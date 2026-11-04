@@ -189,13 +189,14 @@ function Navbar() {
   const labels =
     lang === "fr"
       ? {
-          home: "Accueil",
-          about: "À propos",
-          services: "Services",
-          projects: "Projets",
-          pricing: "Tarifs",
-          contact: "Contact",
-        }
+       home: "Accueil",
+       about: "À propos",
+       services: "Services",
+       projects: "Projets",
+       pricing: "Tarifs",
+       contact: "Contact",
+       workConditions: "Conditions de travail",
+}
       : {
           home: "Home",
           about: "About",
@@ -203,16 +204,18 @@ function Navbar() {
           projects: "Projects",
           pricing: "Pricing",
           contact: "Contact",
+          workConditions: "Work Conditions",
         };
 
-  const links = [
-    ["/", labels.home],
-    ["/about", labels.about],
-    ["/services", labels.services],
-    ["/projects", labels.projects],
-    ["/pricing", labels.pricing],
-    ["/contact", labels.contact],
-  ];
+ const links = [
+  ["/", labels.home],
+  ["/about", labels.about],
+  ["/services", labels.services],
+  ["/projects", labels.projects],
+  ["/pricing", labels.pricing],
+  ["/contact", labels.contact],
+  ["/work-conditions", labels.workConditions],
+];
 
   return (
     <header className="navbar">
@@ -1203,6 +1206,120 @@ function SectionTitle({ eyebrow, title, subtitle, link, linkText }) {
   );
 }
 
+function WorkConditions() {
+  const { lang } = useLanguage();
+  const fr = lang === "fr";
+
+  const conditions = fr
+    ? [
+        {
+          icon: "code",
+          title: "Statut professionnel",
+          text: "Je travaille exclusivement en tant que développeur Full-Stack freelance indépendant et prestataire de services. Je ne recherche pas de poste salarié ni d'intégration permanente dans les bureaux d'une entreprise.",
+        },
+        {
+          icon: "layers",
+          title: "Type de collaboration",
+          text: "J'accepte les missions ponctuelles, les projets spécifiques ainsi que les collaborations de longue durée, tout en conservant mon indépendance professionnelle.",
+        },
+        {
+          icon: "globe",
+          title: "Lieu de travail",
+          text: "Je travaille principalement à distance. Une intervention sur site peut être envisagée selon la nature du projet et après accord préalable.",
+        },
+        {
+          icon: "settings",
+          title: "Organisation des projets",
+          text: "Les objectifs, fonctionnalités, responsabilités et délais sont définis avec le client avant le démarrage de chaque mission.",
+        },
+        {
+          icon: "message",
+          title: "Tarification et paiement",
+          text: "Chaque prestation fait l'objet d'un devis adapté à sa complexité et à son périmètre. Les modalités de paiement sont convenues avant le début du travail.",
+        },
+        {
+          icon: "headset",
+          title: "Suivi et accompagnement",
+          text: "La communication, le suivi technique et l'assistance sont organisés selon les besoins du client et les prestations convenues.",
+        },
+      ]
+    : [
+        {
+          icon: "code",
+          title: "Professional status",
+          text: "I work exclusively as an independent freelance Full-Stack developer and service provider. I am not seeking salaried employment or permanent integration into a company's offices.",
+        },
+        {
+          icon: "layers",
+          title: "Types of collaboration",
+          text: "I accept one-time assignments, specific projects and long-term collaborations while maintaining my professional independence.",
+        },
+        {
+          icon: "globe",
+          title: "Work location",
+          text: "I mainly work remotely. On-site work may be considered depending on the project and subject to prior agreement.",
+        },
+        {
+          icon: "settings",
+          title: "Project organization",
+          text: "Objectives, features, responsibilities and deadlines are agreed with the client before each assignment begins.",
+        },
+        {
+          icon: "message",
+          title: "Pricing and payment",
+          text: "Each service is quoted according to its complexity and scope. Payment terms are agreed before work begins.",
+        },
+        {
+          icon: "headset",
+          title: "Follow-up and support",
+          text: "Communication, technical follow-up and assistance are organized according to the client's needs and the agreed services.",
+        },
+      ];
+
+  return (
+    <PageHero
+      eyebrow={
+        fr ? "MODALITÉS DE COLLABORATION" : "COLLABORATION TERMS"
+      }
+      title={
+        fr ? "Mes conditions de travail" : "My Working Conditions"
+      }
+      description={
+        fr
+          ? "Je propose mes services en tant que développeur Full-Stack freelance indépendant. Voici les modalités selon lesquelles je collabore avec mes clients."
+          : "I offer my services as an independent freelance Full-Stack developer. Here are the terms under which I collaborate with my clients."
+      }
+    >
+      <div className="about-grid">
+        {conditions.map((condition) => (
+          <article className="about-card" key={condition.title}>
+            <span className="icon-circle">
+              <Icon name={condition.icon} />
+            </span>
+
+            <h2>{condition.title}</h2>
+
+            <p>{condition.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="confidentiality-note">
+        {fr
+          ? "Chaque collaboration fait l'objet d'un accord préalable précisant les prestations, les délais et les conditions financières."
+          : "Every collaboration is subject to a prior agreement specifying the services, deadlines and financial terms."}
+      </div>
+
+      <div className="hero-actions">
+        <Link to="/contact" className="btn btn-primary">
+          {fr ? "Discutons de votre projet" : "Let's discuss your project"}
+          <Icon name="arrow" size={18} />
+        </Link>
+      </div>
+    </PageHero>
+  );
+}
+
 export default function App() {
   return (
     <LanguageProvider>
@@ -1220,6 +1337,7 @@ export default function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/work-conditions" element={<WorkConditions />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>
